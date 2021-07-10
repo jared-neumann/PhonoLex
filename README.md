@@ -15,6 +15,7 @@ This file contains a json version of the [CMU Pronouncing Dictionary][1]. It inc
 |:-----|:---:|:---:|:---:|:---:|:---:|:---:|
 |banana|  B  | AH0 |  N  | AE1 |  N  | AH0 |
 </details>
+
 #### *features.json*
 This file maps the ARPAbet symbols for phonemes used in the CMU Pronouncing Dictionary to their corresponding phonological features. These features were derived from the definitions of those symbols. Several features are described, for example:
 <details>
