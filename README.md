@@ -113,7 +113,7 @@ gives the following output:
   
 </details>
 
-One limitation of this function currently is that it only returns the first match. So, if there are alternate pronunciations, only the primary pronunciation is returned. However, alternate pronunciations can be looked up directly by adding (1) or some other number in parentheses to the search term.
+One limitation of this function currently is that it only returns the first match. So, if there are alternate pronunciations, only the primary pronunciation is returned. However, alternate pronunciations can be looked up directly by adding (2) or some other (higher) number in parentheses to the search term.
 
 [1]: http://www.speech.cs.cmu.edu/cgi-bin/cmudict
 [2]: https://www.english-corpora.org/coca/
