@@ -10,9 +10,12 @@ The data folder includes four files: cmu.json, features.json, commonlemmas.txt, 
 This file contains a json version of the [CMU Pronouncing Dictionary][1]. It includes a dictionary of English vocabulary terms as keys and an ordered list of phonemes with stress indicated. There are approximately 135k words, some of which are represented more than once with alternate proncunciations.
 #### *features.json*
 This file maps the ARPAbet symbols for phonemes used in the CMU Pronouncing Dictionary to their corresponding phonological features. These features were derived from the definitions of those symbols. Several features are described, for example:
+<details>
+  <summary>Expand</summary>
+  
 |    FEATURE   | 'IH' |
 |:-------------|-----:|
-|<sub>TYPE</sub>          | V    |
+|TYPE          | V    |
 |HEIGHT        | 0.2  |
 |DEPTH         | 0.75 |
 |ROUNDED       | 0    |
@@ -34,7 +37,7 @@ This file maps the ARPAbet symbols for phonemes used in the CMU Pronouncing Dict
 |PALATAL       | None |
 |GLIDE         | None |
 |GLOTTAL       | None |
-
+</details>
 ### Functions
 
 ### References
