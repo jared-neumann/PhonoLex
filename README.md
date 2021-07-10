@@ -12,7 +12,7 @@ This file contains a json version of the [CMU Pronouncing Dictionary][1]. It inc
 This file maps the ARPAbet symbols for phonemes used in the CMU Pronouncing Dictionary to their corresponding phonological features. These features were derived from the definitions of those symbols. Several features are described, for example:
 |    FEATURE   | 'IH' |
 |:-------------|-----:|
-|TYPE          | V    |
+|<sub>TYPE</sub>          | V    |
 |HEIGHT        | 0.2  |
 |DEPTH         | 0.75 |
 |ROUNDED       | 0    |
