@@ -3,6 +3,9 @@ __Jared Neumann__ <br>
 __janeuman@iu.edu__
 
 ### Description
+PhonoLex is an application (in progress) that allows users to write phonological queries that return lists of words satisfying that phonology. Word-level features such as character and phoneme length, number of syllables, the presence of diphthongs, and the frequency of the potential matches, can be combined with phoneme-level features to generate those lists. Phoneme-level features include all manners of articulation, and any number of these features can be combined in a particular order to create patterns. Three options for the mode of matching are available: users can find their patterns starting from the beginning of a word (STARTS_WITH), the end of a word (ENDS_WITH), or anywhere (CONTAINS). 
+<br><br>
+The initial use-case and motivation for this project was generating phonologically precise word-lists for targeted speech-language pathology therapies.
 
 ### Data
 The data folder includes four files: cmu.json, features.json, commonlemmas.txt, and commonwords.txt. 
