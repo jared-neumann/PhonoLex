@@ -73,7 +73,7 @@ gives the following output:
 <details>
   <summary>Description Table Example</summary>
   
-  | Table 1    |         |
+  **TABLE 1**: Word-Level Features
   |:-----------|--------:|
   | word       | banana  |
   | is_word    | True    |
