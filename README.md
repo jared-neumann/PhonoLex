@@ -1,5 +1,5 @@
 # PhonoLex
-__Jared Neumann__
+__Jared Neumann__ <br>
 __janeuman@iu.edu__
 
 ### Description
@@ -12,3 +12,4 @@ This file contains a json version of the [CMU Pronunciation Dictionary][1]. It i
 ### Functions
 
 ### References
+[1]: http://www.speech.cs.cmu.edu/cgi-bin/cmudict
