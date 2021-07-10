@@ -61,7 +61,7 @@ This file contains 4369 of the most common lemmas in English derived from the sa
 ### Functionality
 Currently, there is only the core Phonology class. If you have data in the same format as the available data, an instance can be created that uses it. Otherwise, the defaults will be used. The only dependencies are json for reading the files and pandas for constructing and displaying the description table (not used in the core functionality, but will become important for the GUI).
 
-####Getting information about particular words
+#### Getting information about particular words
 If you would like to know the available phonological data about a particular word, you can access those functions directly. All that data is included in the description_table function, e.g.,
 
 ```
