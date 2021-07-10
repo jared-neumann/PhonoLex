@@ -83,6 +83,35 @@ gives the following output:
   | phonemes   | 6       |
   
 </details>
+<details>
+  <summary>Table 2: Phoneme-Level Features</summary>
+  
+|             |   B  | AH0  |  N   | AE1  |  N   | AH0  |
+|:------------|:----:|:----:|:----:|:----:|:----:|:----:|
+|TYPE         |   C  |  V   | C    | V    | C    | V    |
+|HEIGHT       | NaN  |0.6   | NaN  | 0.8  | NaN  | 0.6  |
+|DEPTH        | NaN  |  0   | NaN  |  1   | NaN  |  0   |
+|ROUNDED      | NaN  |  0   | NaN  |  0   | NaN  |  0   |
+|RHOTIC       |   0  |  0   | 0    |  0   | 0    | 0    |
+|STOP         |   1  |NaN   | 0    | NaN  |  0   | NaN  |
+|VOICE        |   1  |NaN   | 0    | NaN  |  0   | NaN  |
+|BILABIAL     |   1  |NaN   | 0    | NaN  |  0   | NaN  |
+|AFFRICATE    |   0  |NaN   | 0    | NaN  |  0   | NaN  |
+|ALVEOPALATAL |   0  |NaN   | 0    | NaN  |  0   | NaN  |
+|ALVEOLAR     |   0  |NaN   | 1    | NaN  |  1   | NaN  |
+|FRICATIVE    |   0  |NaN   | 0    | NaN  |  0   | NaN  |
+|DENTAL       |   0  |NaN   | 0    | NaN  |  0   | NaN  |
+|LABIODENTAL  |   0  |NaN   | 0    | NaN  |  0   | NaN  |
+|VELAR        |   0  |NaN   | 0    | NaN  |  0   | NaN  |
+|LATERAL      |   0  |  0   | 0    | 0    | 0    | 0    |
+|POSTALVEOLAR |   0  |NaN   | 0    | NaN  |  0   | NaN  |
+|NASAL        |   0  |NaN   | 1    | NaN  |  1   | NaN  |
+|LABIOVELAR   |   0  |NaN   | 0    | NaN  |  0   | NaN  |
+|PALATAL      |   0  |NaN   | 0    | NaN  |  0   | NaN  |
+|GLIDE        |   0  |NaN   | 0    | NaN  |  0   | NaN  |
+|GLOTTAL      |   0  |NaN   | 0    | NaN  |  0   | NaN  |
+  
+</details>
 
 
 [1]: http://www.speech.cs.cmu.edu/cgi-bin/cmudict
