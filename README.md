@@ -115,5 +115,104 @@ gives the following output:
 
 One limitation of this function currently is that it only returns the first match. So, if there are alternate pronunciations, only the primary pronunciation is returned. However, alternate pronunciations can be looked up directly by adding (2) or some other (higher) number in parentheses to the search term.
 
+#### Query formats
+
+To query the data for particular patterns, use the match() function. 
+```
+ph.match(word_features = [], phone_features = [], mode = 'CONTAINS', frequency = 'ALL')
+```
+
+###### *word_features
+
+Word-level features are specified using a dictionary of features. The possible features are 'SYLLABLES', 'CHARACTERS', 'PHONEMES', 'CONTAINS_DIPHTHONG'. The first three require integer values, while the last requires a boolean. Note: 'CONTAINS_DIPHTHONG' should only be used if it matters whether the results contain diphthongs. False will result in no matches with diphthongs and True will result in all matches with diphthongs.
+
+<details>
+  <summary>word_features Example</summary>
+  
+  ```
+  word_features = {'SYLLABLES': 3, 'CHARACTERS': [5, 10], 'CONTAINS_DIPHTHONG': False}
+  ```
+  
+</details>
+
+Also notice that the integers values could also be lists of two integers values. This will define a range with a min and max. That means this query will return words with anywhere from 5 to 10 characters, so long as the other criteria are satisfied.
+
+###### *phone_features
+
+Phoneme-level features are specified using a *list* of dictionaries containing features. The possible features are all those included in the above table containing the manners of articulation with the indicated data types. The list is positional, so the order matters. The pattern will be matched in the order it occurs in the word.
+
+<details>
+  <summary>phone_features Example</summary>
+  
+  ```
+  phone_features = [
+  {'TYPE': 'C', 'STOP': 1.0}, 
+  {'TYPE': 'V', 'HEIGHT': [0.6, 1.0]}
+  ]
+  ```
+  
+</details>
+
+This pattern will match any word containing a stop-consonant (e.g., 'D') immediately followed by any mid-high vowel (e.g., 'AH').
+
+###### *mode
+
+The mode argument allows the user to indicate whether a pattern should be matched anywhere (default), from the beginning of the word, or at the end of the word (the class allows for the creation of an interesting rhyme or slant-rhyme generator!). Options are 'CONTAINS', 'STARTS_WITH', and 'ENDS_WITH'. They each use the same comparison function. 'CONTAINS' is obviously the most computationally intensive. 'ENDS_WITH' simply reverses both the pattern and prospective match and works the same way as 'STARTS_WITH'. 'CONTAINS' works the same way as 'STARTS_WITH', but contains trying to match starting at each successive index of the word's phonemes until it finds a match or the length of the pattern is greater than the remainder of the phonemes.
+
+###### *frequency
+
+The frequency argument allows the user to indicate whether the entire CMU Pronouncing Dictionary should be searched or one of the smaller wordlists. Options are 'ALL' (CMU), 'COMMON_WORDS' (common words with word forms), and 'COMMON_LEMMAS' (common words in the base form). The benefits of each are given above.
+
+###### *Examples
+
+The following are some example searches with results.
+<details>
+  <summary>phone_features Example</summary>
+  
+  ```
+  word_features = {'SYLLABLES': 3, 'CHARACTERS': [5, 10], 'CONTAINS_DIPHTHONG': False}
+  
+  phone_features = [
+  {'TYPE': 'C', 'STOP': 1.0}, 
+  {'TYPE': 'V', 'HEIGHT': [0.6, 1.0]}
+  ]
+  
+  ph.match(word_features, phone_features, mode = 'STARTS_WITH', frequency = 'COMMON_WORDS')
+  ```
+  
+</details>
+
+This query returns a list containing 114 items:
+['together', 'company', 'possible', 'policy', 'personal', 'companies', 'position', 'continue', 'director', 'potential', ...]
+
+The same query using the CMU vocabulary returns 4741 results. Using the common lemmas wordlist, there are 107 results.
+
+We can also use empty lists to match anything in position.
+
+<details>
+  <summary>phone_features Example</summary>
+  
+  ```
+  word_features = {'SYLLABLES': [2,3], 'CHARACTERS': [4, 8], 'PHONEMES': [3, 6] 'CONTAINS_DIPHTHONG': True}
+  
+  phone_features = [
+  {'TYPE': 'C', 'STOP': 1.0},
+  {'TYPE': 'V', 'HEIGHT': 0.4},
+  {'TYPE': 'C', 'VELAR': 0.0},
+  {}
+  ]
+  
+  ph.match(word_features, phone_features, mode = 'CONTAINS', frequency = 'ALL')
+  ```
+</details>
+
+This query returns a list containing 30 items:
+['baudoin', 'beaupre', 'boelkow', 'bolkow', 'bolshoi', 'bovine', 'bowdoin', 'bowline', 'co-wife', 'cobain', 'cobaine', 'coday', 
+'cofide', 'colao', 'dochow', 'dolce', 'domain', 'domaine', 'donate', 'godown', 'kobe', "kobe's", 'komine', 'podell', 'pohnpei', ...]
+
+The same query using the common words list returns 1 result ('domain'). Using the common lemmas list, there are 2 results ('domain', 'donate').
+
+Also, note that neither word_features nor phone_features are *required* arguments. Either one can be left out for matches that only pertain to the desired level of the criteria (word or phoneme).
+
 [1]: http://www.speech.cs.cmu.edu/cgi-bin/cmudict
 [2]: https://www.english-corpora.org/coca/
