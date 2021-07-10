@@ -71,9 +71,9 @@ ph.description_table('banana')
 
 gives the following output:
 <details>
-  <summary>Description Table Example</summary>
+  <summary>Table 1: Word-Level Features</summary>
   
-  **TABLE 1**: Word-Level Features
+  |            |         |
   |:-----------|--------:|
   | word       | banana  |
   | is_word    | True    |
