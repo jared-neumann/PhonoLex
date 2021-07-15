@@ -62,21 +62,14 @@ This file contains 4369 of the most common lemmas in English derived from the sa
 Currently, there is only the core Phonology class. If you have data in the same format as the available data, an instance can be created that uses it. Otherwise, the defaults will be used. The only dependencies are json for reading the files and pandas for constructing and displaying the description table (not used in the core functionality, but will become important for the GUI).
 
 #### Getting information about particular words
-First, initialize the Phonology class in the following manner:
-```
-import phonolex
-from phonolex.phonology import *
+If you would like to know the available phonological data about a particular word, you can access those functions directly. All that data is included in the description_table function, e.g.,
 
+```
 ph = Phonology()
+ph.description_table('banana')
 ```
 
-If you would like to know the available phonological data about a particular word, you can access those functions directly. All that data is included in the describe() function, e.g.,
-
-```
-ph.describe('banana')
-```
-
-gives the following information (in dictionary format):
+gives the following output:
 <details>
   <summary>Table 1: Word-Level Features</summary>
   
@@ -120,7 +113,7 @@ gives the following information (in dictionary format):
   
 </details>
 
-One limitation of this function currently is that it only returns the first match. So, if there are alternate pronunciations, only the primary pronunciation is returned. However, alternate pronunciations can be looked up directly by adding (2) or some other (higher) number in parentheses to the search term. This is the use case where the results of the match() function are associated with their features.
+One limitation of this function currently is that it only returns the first match. So, if there are alternate pronunciations, only the primary pronunciation is returned. However, alternate pronunciations can be looked up directly by adding (2) or some other (higher) number in parentheses to the search term.
 
 #### Query formats
 
