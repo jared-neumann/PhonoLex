@@ -68,6 +68,7 @@ First, initialize the Phonology class:
 from phonolex.phonology import *
 
 ph = Phonology()
+```
 
 If you would like to know the available phonological data about a particular word, you can access those functions directly. All that data is included in the describe(word) function, e.g.,
 
