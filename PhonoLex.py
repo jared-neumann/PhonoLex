@@ -132,7 +132,7 @@ class Phonology():
             return None
 
     # Core function to match features and feature patterns.            
-    def match(self, word_features = [], phone_features = [], mode = 'CONTAINS', frequency = 'ALL'):
+    def match(self, word_features = {}, phone_features = [], mode = 'CONTAINS', frequency = 'ALL'):
         
         modes = ['STARTS_WITH', 'ENDS_WITH', 'CONTAINS'] # Define the variable options.
         frequencies = ['ALL', 'COMMON_WORDS', 'COMMON_LEMMAS']
@@ -160,7 +160,6 @@ class Phonology():
         if len(word_features) > 0:
             
             if 'SYLLABLES' in word_features:
-                
                 syllables = word_features['SYLLABLES']
 
                 # Because there are multiple data types we can compare,
@@ -201,11 +200,9 @@ class Phonology():
         # Core function for the modes of comparison; same in all cases with
         # different passed variables.
         def compare_features(word_features, phone_features):
-            
             match = True # Initialize match to True.
                 
-            if len(word_features) >= len(phone_features):
-                    
+            if len(word_features) >= len(phone_features):   
                 for i in range(0, len(phone_features)):
  
                     word_phoneme = word_features[i] # Compare phoneme features at the same index.
