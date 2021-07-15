@@ -5,7 +5,7 @@ setup(
   packages = ['phonolex'],
   package_dir = {'phonolex': 'src/phonolex'},
   package_data={'phonolex': ['data/cmu.json', 'data/features.json', 'data/commonwords.txt', 'data/commonlemma.txt']},
-  version = '0.1',  license='gpl-3.0',
+  version = '0.1',  license='wtfpl',
   description = 'This is a small package to describe the phonology of words and find matches for word features and/or phonological patterns.',
   author = 'Jared Neumann',
   author_email = 'janeuman@iu.edu',
