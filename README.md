@@ -17,7 +17,8 @@ PhonoLex is an application (in progress) that allows users to write phonological
 The initial use-case and motivation for this project was generating phonologically precise word-lists for targeted speech-language pathology therapies.
 
 ### Data
-The data folder includes four files: cmu.json, features.json, commonlemmas.txt, and commonwords.txt. 
+The data folder includes four files: cmu.json, features.json, commonlemmas.txt, and commonwords.txt.
+
 #### *cmu.json*
 This file contains a json version of the [CMU Pronouncing Dictionary][1]. It includes a dictionary of English vocabulary terms as keys and an ordered list of phonemes with stress indicated. There are approximately 135k words, some of which are represented more than once with alternate proncunciations.
 <details>
@@ -68,7 +69,7 @@ This file contains 5027 of the most common words in English derived from the [Co
 This file contains 4369 of the most common lemmas in English derived from the same corpus. Lemmas are the so-called 'dictionary' form of the word, so the list contains a richer unique vocabulary, albeit fewer words altogether. Again, duplicates were removed and the included list has been cross-referenced with the CMU vocabulary.
 
 ### Functionality
-Currently, there is only the core Phonology class. If you have data in the same format as the available data, an instance can be created that uses it. Otherwise, the defaults will be used. The only dependencies are json for reading the files and pandas for constructing and displaying the description table (not used in the core functionality, but will become important for the GUI).
+Currently, there is only the core Phonology class.
 
 #### Getting information about particular words
 First, initialize the Phonology class:
@@ -132,14 +133,12 @@ gives the following output (in dictionary format, translated here for readabilit
 One limitation of this function currently is that it only returns the first match. So, if there are alternate pronunciations, only the primary pronunciation is returned. However, alternate pronunciations can be looked up directly by adding (2) or some other (higher) number in parentheses to the search term.
 
 #### Query formats
-
 To query the data for particular patterns, use the match() function. 
 ```
 ph.match(word_features = [], phone_features = [], mode = 'CONTAINS', frequency = 'ALL')
 ```
 
 ###### word_features
-
 Word-level features are specified using a dictionary of features. The possible features are 'SYLLABLES', 'CHARACTERS', 'PHONEMES', 'CONTAINS_DIPHTHONG'. The first three require integer values, while the last requires a boolean. Note: 'CONTAINS_DIPHTHONG' should only be used if it matters whether the results contain diphthongs. False will result in no matches with diphthongs and True will result in all matches with diphthongs.
 
 <details>
@@ -154,7 +153,6 @@ Word-level features are specified using a dictionary of features. The possible f
 Also notice that the integers values could also be lists of two integers values. This will define a range with a min and max. That means this query will return words with anywhere from 5 to 10 characters, so long as the other criteria are satisfied.
 
 ###### phone_features
-
 Phoneme-level features are specified using a *list* of dictionaries containing features. The possible features are all those included in the above table containing the manners of articulation with the indicated data types. The list is positional, so the order matters. The pattern will be matched in the order it occurs in the word.
 
 <details>
@@ -172,15 +170,12 @@ Phoneme-level features are specified using a *list* of dictionaries containing f
 This pattern will match any word containing a stop-consonant (e.g., 'D') immediately followed by any mid-high vowel (e.g., 'AH').
 
 ###### mode
-
 The mode argument allows the user to indicate whether a pattern should be matched anywhere (default), from the beginning of the word, or at the end of the word (the class allows for the creation of an interesting rhyme or slant-rhyme generator!). Options are 'CONTAINS', 'STARTS_WITH', and 'ENDS_WITH'. They each use the same comparison function. 'CONTAINS' is obviously the most computationally intensive. 'ENDS_WITH' simply reverses both the pattern and prospective match and works the same way as 'STARTS_WITH'. 'CONTAINS' works the same way as 'STARTS_WITH', but contains trying to match starting at each successive index of the word's phonemes until it finds a match or the length of the pattern is greater than the remainder of the phonemes.
 
 ###### frequency
-
 The frequency argument allows the user to indicate whether the entire CMU Pronouncing Dictionary should be searched or one of the smaller wordlists. Options are 'ALL' (CMU), 'COMMON_WORDS' (common words with word forms), and 'COMMON_LEMMAS' (common words in the base form). The benefits of each are given above.
 
 ###### Examples
-
 The following are some example searches with results.
 <details>
   <summary>Query Example 1</summary>
@@ -227,7 +222,6 @@ This query returns a list containing 30 items:
 'cofide', 'colao', 'dochow', 'dolce', 'domain', 'domaine', 'donate', 'godown', 'kobe', "kobe's", 'komine', 'podell', 'pohnpei', ...]
 
 The same query using the common words list returns 1 result ('domain'). Using the common lemmas list, there are 2 results ('domain', 'donate').
-
 Also, note that neither word_features nor phone_features are *required* arguments. Either one can be left out for matches that only pertain to the desired level of the criteria (word or phoneme).
 
 [1]: http://www.speech.cs.cmu.edu/cgi-bin/cmudict
