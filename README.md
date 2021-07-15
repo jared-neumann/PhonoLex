@@ -3,7 +3,7 @@ __Jared Neumann__ <br>
 __janeuman@iu.edu__
 
 ### Installation
-Currently, phonolex is in version 0.0.1-beta. Install via pip:
+Currently, phonolex is in version 0.0.1. Install via pip:
 
 ```
 pip install phonolex
