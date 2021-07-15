@@ -26,6 +26,21 @@ class Phonology():
         if self.features == None:
             self.features = self.load_features(features_path)
 
+    # Pool word functions into one dictionary.
+    def describe(self, word):
+
+        return {
+            'word': word,
+            'is word': self.is_word(word),
+            'number of syllables': self.number_of_syllables(word),
+            'diphthongs': self.contains_diphthongs(word),
+            'character length': self.character_length(word),
+            'phoneme length': self.phone_length(word),
+            'phonemes': self.phones_without_stress(word),
+            'stressed syllables': self.phones_with_stress(word),
+            'features': self.feature_set(word)
+            }
+
     # Check if a given word is in the vocabulary.
     # TO-DO: Add options for other wordlists.
     def is_word(self, word):
@@ -160,6 +175,7 @@ class Phonology():
         if len(word_features) > 0:
             
             if 'SYLLABLES' in word_features:
+                
                 syllables = word_features['SYLLABLES']
 
                 # Because there are multiple data types we can compare,
@@ -200,9 +216,11 @@ class Phonology():
         # Core function for the modes of comparison; same in all cases with
         # different passed variables.
         def compare_features(word_features, phone_features):
+            
             match = True # Initialize match to True.
                 
-            if len(word_features) >= len(phone_features):   
+            if len(word_features) >= len(phone_features):
+                    
                 for i in range(0, len(phone_features)):
  
                     word_phoneme = word_features[i] # Compare phoneme features at the same index.
