@@ -1,4 +1,4 @@
-# phonolex
+# PhonoLex
 __Jared Neumann__ <br>
 __janeuman@iu.edu__
 
