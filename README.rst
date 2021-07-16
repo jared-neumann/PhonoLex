@@ -93,7 +93,7 @@ The values may have the following data types: *string* (for TYPE, i.e., vowel or
 Vowel Chart
 ___________
 
-It may be useful to see how the vowels were plotted on the height/depth continuum. A fuller reference will be provided for all phoneme features, but for the time being refer to the following graph.
+It may be useful to see how the vowels were plotted on the height/depth continuum. A fuller reference will be provided for all phoneme features, but for the time being refer to the following graph (which does not include diphthongs, as these are traditionally plotted in a differnt manner indicating *flow* from one articulation to another).
 
 .. image:: src/phonolex/info/vowels.png
    :align: center
