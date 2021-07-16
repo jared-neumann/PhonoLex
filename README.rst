@@ -96,7 +96,8 @@ ___________
 It may be useful to see how the vowels were plotted on the height/depth continuum. A fuller reference will be provided for all phoneme features, but for the time being refer to the following graph.
 
 .. image:: src/phonolex/info/vowels.png
-
+   :align: center
+   
 COCA Common Words and Lemmas
 ----------------------------
 
