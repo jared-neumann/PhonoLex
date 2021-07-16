@@ -135,7 +135,7 @@ One limitation of this function currently is that it only returns the first matc
 #### Query formats
 To query the data for particular patterns, use the match() function. 
 ```
-ph.match(word_features = [], phone_features = [], mode = 'CONTAINS', frequency = 'ALL')
+ph.match(word_features = {}, phone_features = [], mode = 'CONTAINS', frequency = 'ALL')
 ```
 
 ###### word_features
