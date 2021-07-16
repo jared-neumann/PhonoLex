@@ -90,6 +90,12 @@ The features.json file maps the ARPAbet symbols used for phonemes in the CMU Pro
 
 The values may have the following data types: *string* (for TYPE, i.e., vowel or consonant), *float* (for all numerical values, even those that are binary), *None* (for the cases in which a feature is not applicable/possible), and *list* (for ranges of values as in the case of diphthongs or search queries).
 
+Vowel Chart
+___________
+
+It may be useful to see how the vowels were plotted on the height/depth continuum. A fuller reference will be provided for all phoneme features, but for the time being refer to the following graph.
+
+.. image:: src/phonolex/info/vowels.png
 
 COCA Common Words and Lemmas
 ----------------------------
