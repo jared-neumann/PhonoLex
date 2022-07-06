@@ -16,7 +16,7 @@ The core functionality of this package is to allow users to define phonological 
 Use-Case
 --------
 
-The package was initially developed to aid speech-language pathologists in developing phonologically defined word lists for certain therapies. An actual example is given in the 
+The package was initially developed to aid speech-language pathologists in developing phonologically defined word lists for certain therapies. An actual example is given in the Examples section.
 
 Data
 ====
